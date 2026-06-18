@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://cskqoqm3saw87"]
+
+[ext_resource type="Script" uid="uid://bwctnhpvdompt" path="res://Scripts/PlayerMechanics/player.gd" id="1_kyqiw"]
+[ext_resource type="Texture2D" uid="uid://crr1pnho867w1" path="res://Assets/character-temp1.png" id="1_rpqav"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpqav"]
+size = Vector2(16, 32)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_kyqiw")
+
+[node name="Flipper" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Flipper"]
+texture = ExtResource("1_rpqav")
+
+[node name="RopeAttachPoint" type="Marker2D" parent="Flipper"]
+
+[node name="SafePickupPoint" type="Marker2D" parent="Flipper"]
+position = Vector2(22, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rpqav")
+
+[node name="JumpBufferTimer" type="Timer" parent="."]
+wait_time = 0.08
+one_shot = true
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="ThrowIndicator" type="Line2D" parent="."]

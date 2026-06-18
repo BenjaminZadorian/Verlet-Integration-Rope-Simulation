@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://dp1ydaybvoii6"]
+
+[ext_resource type="PackedScene" path="res://Scenes/DevTools/TestingTilemap.tscn" id="1_5cjrv"]
+[ext_resource type="PackedScene" uid="uid://cskqoqm3saw87" path="res://Scenes/PlayerMechanics/Player.tscn" id="2_j0p05"]
+[ext_resource type="PackedScene" uid="uid://b2ovb5h5heen2" path="res://Scenes/PlayerMechanics/Safe.tscn" id="3_5nsto"]
+[ext_resource type="PackedScene" uid="uid://dcxfuc2ksth4r" path="res://Scenes/PlayerMechanics/RopeSimulation.tscn" id="5_45d1s"]
+[ext_resource type="Script" uid="uid://4r67nj8fw01l" path="res://Scripts/PlayerMechanics/player-camera.gd" id="5_y7y61"]
+
+[node name="World" type="Node2D"]
+
+[node name="WorldLayer" parent="." instance=ExtResource("1_5cjrv")]
+
+[node name="Player" parent="." instance=ExtResource("2_j0p05")]
+position = Vector2(295, 144)
+
+[node name="Safe" parent="." instance=ExtResource("3_5nsto")]
+position = Vector2(258, 152)
+
+[node name="RopeSimulation" parent="." instance=ExtResource("5_45d1s")]
+position = Vector2(214, 30)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(295, 144)
+zoom = Vector2(2.5, 2.5)
+script = ExtResource("5_y7y61")
+showGameInfo = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUDControl" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FPSLabel" type="Label" parent="CanvasLayer/HUDControl"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+size_flags_horizontal = 0
+
+[node name="RopePieceCounterLeft" type="Label" parent="CanvasLayer/HUDControl"]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="RopePieceCounterUsed" type="Label" parent="CanvasLayer/HUDControl"]
+layout_mode = 0
+offset_top = 23.0
+offset_right = 40.0
+offset_bottom = 46.0

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcxfuc2ksth4r"]
+
+[ext_resource type="Script" uid="uid://gful58reqtyf" path="res://Scripts/PlayerMechanics/rope-verlet.gd" id="1_cwdfc"]
+
+[node name="RopeSimulation" type="Node2D"]
+script = ExtResource("1_cwdfc")
+
+[node name="RopeVisual" type="Line2D" parent="."]
+default_color = Color(0.14933467, 0.7465465, 0.8632535, 1)

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2ovb5h5heen2"]
+
+[ext_resource type="Script" uid="uid://bpiuk7vxs0d8y" path="res://Scripts/PlayerMechanics/safe.gd" id="1_8hlrg"]
+[ext_resource type="Texture2D" uid="uid://dvseoqwu0ynf4" path="res://Assets/safe-temp1.png" id="1_vpjyd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hu3ln"]
+size = Vector2(16, 16)
+
+[node name="Safe" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 3
+freeze_mode = 1
+script = ExtResource("1_8hlrg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_vpjyd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hu3ln")
+
+[node name="RopeAttachPoint" type="Marker2D" parent="."]
