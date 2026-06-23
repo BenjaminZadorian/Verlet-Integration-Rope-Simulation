@@ -32,23 +32,6 @@ Each rope node queries the physics world using `PhysicsServer2D` with a circle s
 
 ---
 
-## Controls
-
-| Action | Input |
-|---|---|
-| Move | `move_left` / `move_right` |
-| Jump | `jump` (with coyote time + jump buffer) |
-| Reel rope in | `reel_in` (while on floor) |
-| Reel rope out | `reel_out` |
-| Climb rope | `climb_rope` (while safe is above player) |
-| Pick up / place safe | `pickup_safe` |
-| Charge throw | Hold `throw_safe` (while holding safe) |
-| Release throw | Release `throw_safe` |
-
-> Input actions must be configured in **Project → Input Map**.
-
----
-
 ## Features
 
 ### Rope
